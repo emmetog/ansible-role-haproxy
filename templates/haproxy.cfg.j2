@@ -58,7 +58,7 @@ backend {{ haproxy_backend.name }}
     option httpchk {{ haproxy_backend.httpchk }}
 {% endif %}
 {% for backend_server in haproxy_backend.servers %}
-    server {{ backend_server.name }} {{ backend_server.address }} cookie {{ backend_server.name }} check
+    server {{ backend_server.name }} {{ backend_server.address }} cookie check
 {% endfor %}
 {% for extra_config in haproxy_backend.extra_configs|default([]) %}
     {{ extra_config }}
