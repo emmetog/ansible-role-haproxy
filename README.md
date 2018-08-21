@@ -6,7 +6,7 @@ Installs HAProxy on RedHat/CentOS and Debian/Ubuntu Linux servers.
 
 **Note**: This role _officially_ supports HAProxy versions 1.4 or 1.5. Future versions may require some rework.
 
-**Note**: This role is based on the []geerlingguy/ansible-role-haproxy](https://github.com/geerlingguy/ansible-role-haproxy) role,
+**Note**: This role is based on the [geerlingguy/ansible-role-haproxy](https://github.com/geerlingguy/ansible-role-haproxy) role,
 with a few adaptations to make the configuration more flexible.
 
 ## Requirements
@@ -84,4 +84,5 @@ MIT / BSD
 
 ## Author Information
 
-This role was created in 2015 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+This role was origianlly created in 2015 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/),
+this fork is maintained by Emmet O'Grady.
