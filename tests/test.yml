@@ -2,7 +2,7 @@
 - hosts: all
 
   vars:
-    haproxy_socket: ''
+    haproxy_sockets: []
     haproxy_chroot: ''
     haproxy_user: root
     haproxy_group: root
