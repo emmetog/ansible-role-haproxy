@@ -1,10 +1,13 @@
 # Ansible Role: HAProxy
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-haproxy.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-haproxy)
+[![Build Status](https://travis-ci.org/emmetog/ansible-role-haproxy.svg?branch=master)](https://travis-ci.org/emmetog/ansible-role-haproxy)
 
 Installs HAProxy on RedHat/CentOS and Debian/Ubuntu Linux servers.
 
 **Note**: This role _officially_ supports HAProxy versions 1.4 or 1.5. Future versions may require some rework.
+
+**Note**: This role is based on the []geerlingguy/ansible-role-haproxy](https://github.com/geerlingguy/ansible-role-haproxy) role,
+with a few adaptations to make the configuration more flexible.
 
 ## Requirements
 
@@ -14,10 +17,10 @@ None.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    haproxy_socket: /var/lib/haproxy/stats
-    haproxy_socket_options: "level admin"
+    haproxy_sockets:
+        - "/var/lib/haproxy/stats level admin"
 
-The socket through which HAProxy can communicate (for admin purposes or statistics). To disable/remove this directive, set `haproxy_socket: ''` (an empty string).
+The sockets through which HAProxy can communicate (for admin purposes or statistics). To disable/remove this directive, set `haproxy_sockets: []` (an empty array).
 
     haproxy_chroot: /var/lib/haproxy
 

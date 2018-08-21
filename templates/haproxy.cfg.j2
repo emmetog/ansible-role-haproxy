@@ -1,9 +1,9 @@
 global
   log {{ haproxy_log_destination }} local0
   log {{ haproxy_log_destination }} local1 notice
-{% if haproxy_socket != '' %}
-  stats socket {{ haproxy_socket }} {{ haproxy_socket_options }}
-{% endif %}
+{% for haproxy_socket in haproxy_sockets %}
+  stats socket {{ haproxy_socket }}
+{% endfor %}
 {% if haproxy_chroot != '' %}
   chroot {{ haproxy_chroot }}
 {% endif %}
@@ -58,7 +58,7 @@ backend {{ haproxy_backend.name }}
     option httpchk {{ haproxy_backend.httpchk }}
 {% endif %}
 {% for backend_server in haproxy_backend.servers %}
-    server {{ backend_server.name }} {{ backend_server.address }} cookie check
+    server {{ backend_server.name }} {{ backend_server.address }} {{ backend_server.params| default("") }}
 {% endfor %}
 {% for extra_config in haproxy_backend.extra_configs|default([]) %}
     {{ extra_config }}
