@@ -42,7 +42,8 @@ Any configuration that should be added to the "defaults" section.
 
     haproxy_frontend_servers: []
       # - name: http-in
-      #   bind: "*:80"
+      #   bind:
+      #     - "*:80"
       #   extra_configs:
       #     - "acl host_bacon hdr(host) -i ilovebacon.com"
       #     - "use_backend bacon_cluster if host_bacon"
