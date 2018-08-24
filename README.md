@@ -68,6 +68,10 @@ HAProxy backend configuration directives.
 
 A list of extra global variables to add to the global configuration section inside `haproxy.cfg`.
 
+    haproxy_restarted_status: restarted
+    
+The status the haproxy service should be in when this role changes some configuration.
+
 ## Dependencies
 
 None.
