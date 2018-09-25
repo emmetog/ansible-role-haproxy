@@ -8,6 +8,12 @@ haproxy_restarted_status: "restarted"
 
 haproxy_log_destination: /dev/log
 
+# The timeout in ms for backend servers to fully respond.
+# It is recommended by HAProxy that the client timeout
+# be the same, for this reason the value below will
+# be used for both server and client timeouts.
+haproxy_backend_timeout: 50000
+
 haproxy_defaults: []
   # - "option forwardfor"
 

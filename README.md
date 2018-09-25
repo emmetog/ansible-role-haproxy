@@ -35,6 +35,11 @@ The user and group under which HAProxy should run. Only change this if you know 
 
 The destination to log to, you won't normally need to change this from it's default value.
 
+    haproxy_backend_timeout: 50000
+
+The timeout in ms for backend servers to fully respond. It is recommended by HAProxy that the client timeout
+be the same, for this reason this value will be used for both server and client timeouts.
+
     haproxy_defaults: []
       # - "option forwardfor"
       

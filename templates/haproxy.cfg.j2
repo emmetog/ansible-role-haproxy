@@ -24,12 +24,12 @@ defaults
 {% endfor %}
 {% if haproxy_version == '1.4' %}
         contimeout 5000
-        clitimeout 50000
-        srvtimeout 50000
+        clitimeout {{ haproxy_backend_timeout }}
+        srvtimeout {{ haproxy_backend_timeout }}
 {% else %}
         timeout connect 5000
-        timeout client 50000
-        timeout server 50000
+        timeout client {{ haproxy_backend_timeout }}
+        timeout server {{ haproxy_backend_timeout }}
 {% endif %}
 {% if ansible_os_family == 'Debian' %}
   errorfile 400 /etc/haproxy/errors/400.http
