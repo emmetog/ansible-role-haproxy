@@ -31,3 +31,9 @@
 
 - name: Ensure HAProxy is started and enabled on boot.
   service: name=haproxy state=started enabled=yes
+
+- name: Configure rsyslog to write to dedicated log
+  template:
+    src: rsyslog.conf.j2
+    dest: /etc/rsyslog.d/50-haproxy.conf
+  when: ansible_os_family == 'Debian'

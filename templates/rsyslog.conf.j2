@@ -1,0 +1,8 @@
+# Provides UDP syslog reception
+$ModLoad imudp
+$UDPServerRun 514
+$UDPServerAddress 127.0.0.1
+
+# Send HAProxy messages to a dedicated logfile
+if $programname startswith 'haproxy' then /var/log/haproxy.log
+&~
